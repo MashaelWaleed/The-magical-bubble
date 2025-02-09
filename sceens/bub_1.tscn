@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://tqay1k0a6tyj"]
+
+[ext_resource type="Texture2D" uid="uid://2tqbpgrveu25" path="res://pic/bub.png" id="1_5r4gg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbgen"]
+atlas = ExtResource("1_5r4gg")
+region = Rect2(238, 166, 119, 166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isbis"]
+atlas = ExtResource("1_5r4gg")
+region = Rect2(119, 166, 119, 166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8uje"]
+atlas = ExtResource("1_5r4gg")
+region = Rect2(0, 166, 119, 166)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ynpie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbgen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isbis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8uje")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="bub1" type="AnimatedSprite2D"]
+position = Vector2(32, -41.5)
+scale = Vector2(0.537815, 0.5)
+sprite_frames = SubResource("SpriteFrames_ynpie")
+autoplay = "default"
+frame_progress = 0.61622

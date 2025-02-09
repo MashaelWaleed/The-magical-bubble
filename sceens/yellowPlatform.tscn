@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b330rq3nsaga4"]
+
+[ext_resource type="Texture2D" uid="uid://8rhplusr6vra" path="res://assets/sprites/platforms.png" id="1_blhui"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(0, -4)
+scale = Vector2(1, 0.888889)
+texture = ExtResource("1_blhui")
+region_enabled = true
+region_rect = Rect2(15.9928, 0, 32.6531, 9.34665)

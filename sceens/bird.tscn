@@ -1,0 +1,297 @@
+[gd_scene load_steps=32 format=3 uid="uid://dufqkeo5e0bbg"]
+
+[ext_resource type="Script" path="res://scripts/bird.gd" id="1_mfsvq"]
+[ext_resource type="Texture2D" uid="uid://67em62amk2mx" path="res://assets/new/crab/Run 01.png" id="2_tbs67"]
+[ext_resource type="Texture2D" uid="uid://df2p4ncf677ss" path="res://assets/new/crab/Run 02.png" id="3_7en6k"]
+[ext_resource type="PackedScene" uid="uid://dpdbf8o2xu81h" path="res://sceens/killzone.tscn" id="3_wtd18"]
+[ext_resource type="Texture2D" uid="uid://bvaewromtcpd1" path="res://assets/new/crab/Run 03.png" id="4_tmqy4"]
+[ext_resource type="Script" path="res://scripts/dying.gd" id="5_jybml"]
+[ext_resource type="Texture2D" uid="uid://n7hfemwqqckr" path="res://assets/new/crab/Run 04.png" id="5_syys5"]
+[ext_resource type="Texture2D" uid="uid://re7vjrjk00qu" path="res://assets/new/crab/Run 05.png" id="6_oph3h"]
+[ext_resource type="AudioStream" uid="uid://b64m2s1esis84" path="res://assets/sounds/explosion.wav" id="6_t3qnv"]
+[ext_resource type="Texture2D" uid="uid://blhh7sayaohi2" path="res://assets/new/crab/Run 06.png" id="7_f7qd1"]
+[ext_resource type="Texture2D" uid="uid://dqw7rqwr2jswe" path="res://assets/new/crab/Fall 01.png" id="8_emgd0"]
+[ext_resource type="Texture2D" uid="uid://cdk7jxg5ngyw3" path="res://assets/new/crab/hit/Hit 02.png" id="9_sr85r"]
+[ext_resource type="Texture2D" uid="uid://dkyideotuk4yy" path="res://assets/new/crab/hit/Hit 03.png" id="10_xjc5t"]
+[ext_resource type="Texture2D" uid="uid://cm8nqlay5jt3j" path="res://assets/new/crab/hit/Hit 04.png" id="11_15qiu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdinb"]
+atlas = ExtResource("2_tbs67")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvtai"]
+atlas = ExtResource("3_7en6k")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwn1k"]
+atlas = ExtResource("4_tmqy4")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07rvx"]
+atlas = ExtResource("5_syys5")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjmwe"]
+atlas = ExtResource("6_oph3h")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkbnr"]
+atlas = ExtResource("7_f7qd1")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b55yn"]
+atlas = ExtResource("8_emgd0")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i41lu"]
+atlas = ExtResource("9_sr85r")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1gnp"]
+atlas = ExtResource("10_xjc5t")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwlxo"]
+atlas = ExtResource("11_15qiu")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wfdb7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdinb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvtai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwn1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07rvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjmwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkbnr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b55yn")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i41lu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1gnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwlxo")
+}],
+"loop": true,
+"name": &"hitBird",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4vqbp"]
+radius = 10.4348
+height = 35.3467
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lbodl"]
+radius = 7.99963
+height = 18.0184
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aydht"]
+size = Vector2(29, 4.75)
+
+[sub_resource type="Animation" id="Animation_5v28r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/killzone/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dyingZoon/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("dyingZoon/AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ed3u6"]
+resource_name = "killBird"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/killzone/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("dyingZoon/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("dyingZoon/AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h0xh0"]
+_data = {
+"RESET": SubResource("Animation_5v28r"),
+"killBird": SubResource("Animation_ed3u6")
+}
+
+[node name="bird" type="CharacterBody2D"]
+position = Vector2(15, -15)
+collision_layer = 4
+script = ExtResource("1_mfsvq")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.499999, 3.5)
+scale = Vector2(0.735294, 0.766667)
+sprite_frames = SubResource("SpriteFrames_wfdb7")
+autoplay = "default"
+
+[node name="killzone" parent="Sprite2D" instance=ExtResource("3_wtd18")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/killzone"]
+position = Vector2(-0.679999, 1.95652)
+rotation = -1.59827
+shape = SubResource("CapsuleShape2D_4vqbp")
+debug_color = Color(0.774037, 0.328862, 0.750636, 0.42)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(1, 4)
+rotation = -6.29279
+shape = SubResource("CapsuleShape2D_lbodl")
+debug_color = Color(0.429152, 0.526379, 0.779652, 0.42)
+
+[node name="RayCastBellow" type="RayCast2D" parent="."]
+position = Vector2(1, 8)
+rotation = -0.461688
+target_position = Vector2(-3.56368, 7.16241)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(1, 4)
+target_position = Vector2(15, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(1, 4)
+target_position = Vector2(-14, 0)
+
+[node name="dyingZoon" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("5_jybml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dyingZoon"]
+position = Vector2(1.5, -5)
+shape = SubResource("RectangleShape2D_aydht")
+debug_color = Color(0.699801, 0.208393, 0.289748, 0.42)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="dyingZoon"]
+position = Vector2(0, 4)
+stream = ExtResource("6_t3qnv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_h0xh0")
+}
+
+[connection signal="body_entered" from="dyingZoon" to="." method="_on_dying_zoon_body_entered"]
+[connection signal="body_entered" from="dyingZoon" to="dyingZoon" method="_on_body_entered"]

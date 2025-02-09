@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmxeneni3q1sx"]
+
+[ext_resource type="Script" path="res://scripts/trusear.gd" id="1_0kg1m"]
+[ext_resource type="Texture2D" uid="uid://bq24e71n7r5s7" path="res://assets/stuff/Chest Close.png" id="1_duinl"]
+[ext_resource type="Texture2D" uid="uid://cxyucr6v4c623" path="res://assets/stuff/Chest Open.png" id="2_sxtfr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdu31"]
+size = Vector2(49.5, 23.25)
+
+[node name="chestZone" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_0kg1m")
+
+[node name="close" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-32.8235, -24)
+scale = Vector2(0.794118, 0.685714)
+texture = ExtResource("1_duinl")
+centered = false
+
+[node name="open" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-32.8235, -24)
+scale = Vector2(0.794118, 0.685714)
+texture = ExtResource("2_sxtfr")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.25, -12.375)
+shape = SubResource("RectangleShape2D_qdu31")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

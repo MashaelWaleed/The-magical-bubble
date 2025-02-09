@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjn2i5hyxak66"]
+
+[ext_resource type="Script" path="res://scripts/instruction.gd" id="1_a6kqe"]
+[ext_resource type="Texture2D" uid="uid://cky2hp50ryhm4" path="res://pic/Blue Pixel Illustration Game Presentation_20250122_224551_٠٠٠١.png" id="1_esvk6"]
+[ext_resource type="FontFile" uid="uid://bagaxsgaemhe6" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_k2631"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kofli"]
+texture = ExtResource("1_esvk6")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t3aed"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfshj"]
+bg_color = Color(0.290196, 0.6, 0.823529, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p4hm"]
+bg_color = Color(0.266667, 0.415686, 0.52549, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fodhc"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[node name="inst" type="Node"]
+script = ExtResource("1_a6kqe")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kofli")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -114.0
+offset_right = 80.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_k2631")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t3aed")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_qfshj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qfshj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_qfshj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qfshj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_5p4hm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5p4hm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fodhc")
+text = "Exit"
+
+[connection signal="pressed" from="Button" to="." method="_on_exit_pressed"]

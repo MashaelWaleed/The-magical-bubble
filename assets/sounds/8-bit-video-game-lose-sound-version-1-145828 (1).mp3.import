@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b2fuaxwpkoqvx"
+path="res://.godot/imported/8-bit-video-game-lose-sound-version-1-145828 (1).mp3-edd41e862f84e7a9ce380fdddb70b615.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/8-bit-video-game-lose-sound-version-1-145828 (1).mp3"
+dest_files=["res://.godot/imported/8-bit-video-game-lose-sound-version-1-145828 (1).mp3-edd41e862f84e7a9ce380fdddb70b615.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

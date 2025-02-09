@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://k61xxknlhwgj"]
+
+[ext_resource type="Script" path="res://scripts/ladder.gd" id="1_ed4b1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2it8"]
+size = Vector2(14, 3)
+
+[node name="ladder" type="Area2D"]
+position = Vector2(0, -1)
+collision_mask = 2
+script = ExtResource("1_ed4b1")
+
+[node name="edge" type="Area2D" parent="."]
+position = Vector2(2, -2)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="edge"]
+position = Vector2(5, 1)
+shape = SubResource("RectangleShape2D_w2it8")
+debug_color = Color(0.577189, 0.453589, 0.825317, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="edge" to="." method="_on_edge_body_entered"]
+[connection signal="body_exited" from="edge" to="." method="_on_edge_body_exited"]

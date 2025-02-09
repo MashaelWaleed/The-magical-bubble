@@ -1,0 +1,259 @@
+[gd_scene load_steps=24 format=3 uid="uid://dqwux3m3mqtbu"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_eupus"]
+[ext_resource type="Texture2D" uid="uid://bhtc1kd7mamsh" path="res://pic/Blue Pixel Illustration Game Presentation(1).png" id="2_b35so"]
+[ext_resource type="FontFile" uid="uid://bagaxsgaemhe6" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_o7pib"]
+[ext_resource type="PackedScene" uid="uid://tqay1k0a6tyj" path="res://sceens/bub_1.tscn" id="3_5sqh1"]
+[ext_resource type="PackedScene" uid="uid://dvsbdifwefapg" path="res://sceens/pM.tscn" id="4_m6qau"]
+[ext_resource type="Texture2D" uid="uid://67em62amk2mx" path="res://assets/new/crab/Run 01.png" id="5_82bqq"]
+[ext_resource type="Texture2D" uid="uid://df2p4ncf677ss" path="res://assets/new/crab/Run 02.png" id="6_okddy"]
+[ext_resource type="Texture2D" uid="uid://bvaewromtcpd1" path="res://assets/new/crab/Run 03.png" id="7_ye5ef"]
+[ext_resource type="Texture2D" uid="uid://n7hfemwqqckr" path="res://assets/new/crab/Run 04.png" id="8_5dgby"]
+[ext_resource type="Texture2D" uid="uid://re7vjrjk00qu" path="res://assets/new/crab/Run 05.png" id="9_6jqts"]
+[ext_resource type="Texture2D" uid="uid://blhh7sayaohi2" path="res://assets/new/crab/Run 06.png" id="10_4takp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xw0un"]
+texture = ExtResource("2_b35so")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q7ar1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whsxg"]
+bg_color = Color(0.290631, 0.598614, 0.823421, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0, 0, 0, 0.447059)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0y63f"]
+bg_color = Color(0.267553, 0.415084, 0.526723, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0, 0, 0, 0.447059)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehnea"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0, 0, 0, 0.513726)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n0vi"]
+atlas = ExtResource("5_82bqq")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wy8m"]
+atlas = ExtResource("6_okddy")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jaxn"]
+atlas = ExtResource("7_ye5ef")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfdmp"]
+atlas = ExtResource("8_5dgby")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2s8j"]
+atlas = ExtResource("9_6jqts")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7ss7"]
+atlas = ExtResource("10_4takp")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ygqcw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n0vi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wy8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jaxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfdmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2s8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7ss7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eupus")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0, 648)
+theme_override_styles/panel = SubResource("StyleBoxTexture_xw0un")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -28.0
+offset_right = 137.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o7pib")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q7ar1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_whsxg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0y63f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ehnea")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o7pib")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q7ar1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_whsxg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0y63f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ehnea")
+text = "Instructions"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o7pib")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q7ar1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_whsxg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0y63f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ehnea")
+text = "Exit Game"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.049
+offset_left = -416.0
+offset_top = 104.0
+offset_right = 424.0
+offset_bottom = 203.248
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("2_o7pib")
+theme_override_font_sizes/font_size = 64
+text = "The magical 
+bubble"
+horizontal_alignment = 1
+
+[node name="Node2" parent="." instance=ExtResource("4_m6qau")]
+position = Vector2(784, 592)
+
+[node name="bub1" parent="." instance=ExtResource("3_5sqh1")]
+position = Vector2(120, 416)
+scale = Vector2(0.470588, 0.490964)
+
+[node name="bub2" parent="." instance=ExtResource("3_5sqh1")]
+position = Vector2(944, 248)
+
+[node name="bub3" parent="." instance=ExtResource("3_5sqh1")]
+position = Vector2(118, 195.25)
+scale = Vector2(0.436975, 0.539157)
+
+[node name="bub4" parent="." instance=ExtResource("3_5sqh1")]
+position = Vector2(868, 496)
+scale = Vector2(0.605042, 0.674699)
+
+[node name="crabDecor" type="AnimatedSprite2D" parent="."]
+position = Vector2(184, 536)
+scale = Vector2(4.83333, 5)
+sprite_frames = SubResource("SpriteFrames_ygqcw")
+autoplay = "default"
+frame_progress = 0.116508
+
+[node name="Node" parent="." instance=ExtResource("4_m6qau")]
+position = Vector2(256, 320)
+
+[node name="Node3" parent="." instance=ExtResource("4_m6qau")]
+position = Vector2(1096, 224)
+
+[node name="bub5" parent="." instance=ExtResource("3_5sqh1")]
+position = Vector2(1080, 368)
+
+[node name="bub6" parent="." instance=ExtResource("3_5sqh1")]
+position = Vector2(1040, 576)
+
+[node name="bub7" parent="." instance=ExtResource("3_5sqh1")]
+position = Vector2(368, 560)
+scale = Vector2(0.436975, 0.539157)
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]

@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://bf3w28xkir8jc"]
+
+[ext_resource type="Script" path="res://scripts/door.gd" id="1_5oytq"]
+[ext_resource type="Texture2D" uid="uid://by0a7aqwo4glh" path="res://assets/stuff/doors_leaf_closed.png" id="2_6i31k"]
+[ext_resource type="Texture2D" uid="uid://dwkn56kpcvbac" path="res://assets/stuff/doors_leaf_open.png" id="3_y3unx"]
+[ext_resource type="Texture2D" uid="uid://qq2wf1mqirm8" path="res://assets/stuff/doors_frame_top.png" id="4_mu1sg"]
+[ext_resource type="Texture2D" uid="uid://boypl4bua65tn" path="res://assets/stuff/doors_frame_left.png" id="5_dit7h"]
+[ext_resource type="Texture2D" uid="uid://di70klpdnypw2" path="res://assets/stuff/doors_frame_right.png" id="6_3idjo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amcx8"]
+size = Vector2(26.5, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a87bp"]
+size = Vector2(65.5, 17)
+
+[node name="door" type="Area2D"]
+position = Vector2(15, -9)
+collision_mask = 2
+script = ExtResource("1_5oytq")
+
+[node name="Closed" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -17)
+scale = Vector2(0.8125, 0.8125)
+texture = ExtResource("2_6i31k")
+centered = false
+
+[node name="Open" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -17)
+scale = Vector2(0.8125, 0.8125)
+texture = ExtResource("3_y3unx")
+centered = false
+
+[node name="DoorsFrameTop" type="Sprite2D" parent="."]
+position = Vector2(0, -30)
+scale = Vector2(0.8125, 0.8125)
+texture = ExtResource("4_mu1sg")
+centered = false
+
+[node name="DoorsFrameLeft" type="Sprite2D" parent="."]
+position = Vector2(-9, -4)
+scale = Vector2(1.125, 0.8125)
+texture = ExtResource("5_dit7h")
+
+[node name="DoorsFrameRight" type="Sprite2D" parent="."]
+position = Vector2(36.5, -4)
+scale = Vector2(1.3125, 0.8125)
+texture = ExtResource("6_3idjo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 2
+position = Vector2(12.75, -5)
+shape = SubResource("RectangleShape2D_amcx8")
+
+[node name="openArea" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="openArea"]
+visibility_layer = 2
+position = Vector2(14.25, 0)
+shape = SubResource("RectangleShape2D_a87bp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="openArea" to="." method="_on_open_area_body_entered"]
+[connection signal="body_exited" from="openArea" to="." method="_on_open_area_body_exited"]
